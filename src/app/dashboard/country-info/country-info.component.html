@@ -1,0 +1,37 @@
+<section class="country-display">
+    <div class="search-div">
+        <p class="search-head">Search by : </p>
+        <form [formGroup]="searchForm" (ngSubmit)="searchByCategory()" class="d-flex">
+            <select class="form-select form-control" aria-label="Default select example" name="category"
+                formControlName="category">
+                <option [defaultSelected]="true">--Category--</option>
+                <option value="Region">Region</option>
+                <option value="Name">Name</option>
+                <option value="Language">Language</option>
+            </select>
+           
+            <input type="text" pattern="^[a-zA-Z]*$" class="form-control" formControlName="keyword" name="keyword"
+                placeholder="enter keyword">
+            <button class="btn btn-search" [disabled]="!searchForm.valid">Search</button>
+        </form>
+    </div>
+
+    <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+        <div class="col" *ngFor="let country of countryInfo">
+            <div class="card h-100 mb-3" style="max-width: 540px;">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-4">
+                        <img src={{country.coatOfArms.png}} width="100px" height="100px" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{country.name.common}}</h5>
+                            <p class="card-text">Region : {{country.region}}</p>
+                            <p class="card-text">Subregion : {{country.subregion}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

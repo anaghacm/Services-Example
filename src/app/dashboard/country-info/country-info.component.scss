@@ -1,0 +1,80 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.country-display {
+
+    .search-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $spacer-1 $spacer-0 $spacer-4;
+    }
+
+    .form-control {
+        margin: $spacer-0 $spacer-3;
+        border-radius: 0;
+        color: $color-green;
+        border: none;
+
+        &:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        &::placeholder {
+            font-size: $font-sm;
+            font-style: italic;
+        }
+    }
+
+    .btn-search {
+        background-color: $color-white;
+        color: $color-green;
+        padding: $spacer-md $spacer-4;
+        border-radius: 0;
+
+        &:focus {
+            box-shadow: none;
+            border: none;
+        }
+    }
+
+    .card {
+        border-radius: 0;
+        background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+        border: none;
+        padding: $spacer-2;
+        color: $color-green;
+        text-align: center;
+
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
+        }
+    }
+
+    .card-text {
+        font-size: $font-sm;
+    }
+}
+
+@include tablet {
+    .country-display {
+        .form-control {
+            margin: $spacer-0 $spacer-1;
+        }
+    }
+}
+
+@include mobile {
+    .country-display {
+
+        .search-div,
+        form {
+            flex-direction: column;
+        }
+
+        .form-control {
+            margin: $spacer-0 $spacer-0 $spacer-1;
+        }
+    }
+}

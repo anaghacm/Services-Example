@@ -1,0 +1,12 @@
+@import '../../../assets/scss/variables';
+
+
+.wallpaper {
+    background-image: url('../../../assets/images/wallpaper.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+

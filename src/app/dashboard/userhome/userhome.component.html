@@ -1,0 +1,19 @@
+<div class="dashboard">
+    <div class="container">
+        <div class="row user-info">
+            <div class="col-lg-6 col-12 img-div">
+                <img src="../../../assets/images/home.png" alt="">
+            </div>
+            <div class="col-lg-6 col-12 text-div">
+                <p class="greeting">Welcome {{userInfo.username | titlecase}}!</p>
+                <p class="content">Email : {{userInfo.email}}</p>
+                <p class="content">Password : {{userInfo.password}}</p>
+                <button class="btn btn-country" (click)="displayCountryInfo()">{{btnText}} <i class="fa-solid fa-earth-americas"></i></button>
+                <a class="btn btn-home" routerLink="">Home</a>
+            </div>
+        </div>
+        <div *ngIf="displayInfo">
+            <app-country-info></app-country-info>
+        </div>
+    </div>
+</div>

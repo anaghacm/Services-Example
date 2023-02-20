@@ -1,0 +1,86 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.register-module {
+    width: 70%;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.75) 5px 5px 15px;
+    margin: auto;
+
+    .row {
+        align-items: center;
+    }
+
+    .registration-form {
+        padding: $spacer-3 $spacer-4;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+        color: $color-white;
+        margin: auto;
+    }
+
+    .formcontrol-div{
+        height: 85px;
+    }
+    .form-control {
+        background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+        border-radius: 0;
+        color: $color-green;
+
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &::placeholder {
+            font-size: $font-sm;
+            font-style: italic;
+        }
+    }
+
+    .warning-message{
+        font-size: $font-xsm;
+        color: red;
+    }
+    .btn-div {
+        text-align: center;
+        margin-top: $spacer-3;
+    }
+
+    .btn-register {
+        background-color: $color-yellow;
+        color: $color-green;
+        padding: $spacer-md $spacer-3;
+        border-radius: 0;
+
+        &:hover i {
+            animation: rotateicon 1s ease-in-out;
+        }
+    }
+
+    .text-div {
+        font-size: $font-xxl;
+        font-weight: 600;
+        line-height: 40px;
+        text-align: center;
+        color: $color-green;
+    }
+}
+
+@include tablet {
+    .register-module {
+        width: 90%;
+        .row {
+            flex-direction: column-reverse;
+        }
+        .text-div{
+            padding-bottom: $spacer-2;
+        }
+    }
+}
+
+@include mobile {
+    .register-module {
+        width: 100%;
+        padding: $spacer-2;
+    }
+}

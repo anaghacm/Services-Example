@@ -1,0 +1,33 @@
+<div class="register-module">
+    <div class="row">
+        <div class="col-lg-6 col-12 register-form">
+            <form class="registration-form" [formGroup]="registrationForm" (ngSubmit)="register()">
+                <div class="mb-2 formcontrol-div">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" pattern="^[a-zA-Z\s\.]*$" formControlName="username" name="username" class="form-control" id="name"
+                        placeholder="your name">
+                    <small class="warning-message" *ngIf="this.registrationForm.get('username')?.touched && this.registrationForm.get('username')?.invalid">Please enter your name</small>
+                </div>
+                <div class="mb-2 formcontrol-div">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" formControlName="email" name="email" class="form-control" id="email"
+                        placeholder="email address">
+                    <small class="warning-message" *ngIf="this.registrationForm.get('email')?.touched && this.registrationForm.get('email')?.invalid">Please enter a valid email id</small>
+                </div>
+                <div class="mb-2 formcontrol-div">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" minlength="8" formControlName="password" name="password" class="form-control" id="password"
+                        placeholder="password">
+                    <small class="warning-message" *ngIf="this.registrationForm.get('password')?.touched && this.registrationForm.get('password')?.invalid">Please enter a valid password</small>
+                </div>
+                <div class="mb-3 btn-div">
+                    <button class="btn btn-register">Register <i class="fa-solid fa-plane-departure"></i></button>
+                </div>
+            </form>
+        </div>
+        <div class=" col-lg-6 col-12 text-div">
+            <p>Start Your Unforgettable Journey!</p>
+        </div>
+    </div>
+
+</div>

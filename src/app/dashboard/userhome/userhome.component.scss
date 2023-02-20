@@ -1,0 +1,73 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.dashboard {
+    background-color: $color-yellow;
+    padding-top: 4%;
+    padding-bottom: 4%;
+
+    .user-info {
+        align-items: center;
+        background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4));
+        padding: $spacer-4;
+        margin-bottom: $spacer-2;
+        color: $color-green;
+        box-shadow: rgba(0, 0, 0, 0.85) 0px 5px 15px;
+    }
+
+    .img-div {
+        text-align: center;
+
+        img {
+            width: 60%;
+        }
+    }
+
+    .text-div {
+        text-align: center;
+    }
+
+    .greeting {
+        font-size: $font-title;
+        font-weight: 700;
+        line-height: 50px;
+        padding: $spacer-3 $spacer-1;
+    }
+
+    .content {
+        font-size: $font-md;
+        padding: $spacer-1;
+    }
+    .btn-country{
+        background-color: $color-yellow;
+        padding: $spacer-1 $spacer-3;
+        margin-top: $spacer-2;
+        border-radius: 0;
+        &:focus{
+            border: none;
+        }
+
+        &:hover i {
+            animation: rotateicon 1s ease-in-out;
+        }
+    }
+    .btn-home{
+        padding: $spacer-1 $spacer-3;
+        margin-top: $spacer-2;
+        text-decoration: underline;
+
+        &:focus{
+            border: none;
+        }
+    }
+    
+}
+
+@include mobile{
+    .dashboard{
+        .user-info{
+            margin-left: $spacer-md;
+            margin-right: $spacer-md;
+        }
+    }
+}
