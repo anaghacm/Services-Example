@@ -10,7 +10,7 @@
                 </div>
                 <div class="mb-2 formcontrol-div">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" formControlName="email" name="email" class="form-control" id="email"
+                    <input type="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" formControlName="email" name="email" class="form-control" id="email"
                         placeholder="email address">
                     <small class="warning-message" *ngIf="this.registrationForm.get('email')?.touched && this.registrationForm.get('email')?.invalid">Please enter a valid email id</small>
                 </div>
